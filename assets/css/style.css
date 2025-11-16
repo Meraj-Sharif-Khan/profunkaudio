@@ -225,3 +225,7 @@ button:active {
   border-radius: 6px;
   color: #ffffff;
 }
+
+.sidebar  .btn{
+    margin-top: 1.5rem;
+}
