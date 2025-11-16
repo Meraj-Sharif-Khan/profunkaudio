@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profunk Audio</title>
+    <link
+      rel="icon"
+      href="./assets/images/icons/favicon.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- nav start -->
+    <nav class="nav nav--light">
+      <div class="nav-content">
+        <a href="/">
+
+            <img class="nav-image" src="./assets/images/logo.svg" alt="logo" />
+        </a>
+        <div class="nav-link-container">
+          <ul class="nav-link-items">
+            <li class="nav-link active">
+              <a href="#home"> Home </a>
+            </li>
+            <li class="nav-link">
+              <a href="#about"> About </a>
+            </li>
+          </ul>
+          <button class="btn btn--primary">Contact</button>
+        </div>
+        <button id="toggleOpen" class="nav__toggle-button">
+          <img src="./assets/images/icons/menu.png" alt="" />
+        </button>
+      </div>
+    </nav>
+    <!-- nav end -->
+    <!-- sidebar start-->
+    <div class="sidebar ope">
+      <button id="toggleClose" class="nav__toggle-button">
+        <img src="./assets/images/icons/close.png" alt="" />
+      </button>
+      <ul class="menu">
+        <li class="nav-link active">
+          <a href="#home"> Home </a>
+        </li>
+        <li class="nav-link">
+          <a href="#about"> About </a>
+        </li>
+        <button class="btn btn--primary">Contact</button>
+      </ul>
+    </div>
+    <!-- side bar end -->
+     <script src="./assets/js/main.js"></script>
+  </body>
+</html>
