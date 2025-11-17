@@ -14,9 +14,10 @@ html {
 
 :root {
   --color-white: #ffffff;
-  --color-bg-muted: #eaeff2;
-  /* Gray/Black-500 */
   --color-primary: #1d1f2c;
+  --color-text-muted: #777980;
+  --color-bg-muted: #eaeff2;
+  --color-bg-disable: #F8FAFB;
 }
 
 body {
@@ -30,6 +31,15 @@ body {
   padding: 8rem 1.6rem;
   margin: auto;
   overflow: hidden;
+}
+p {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  p {
+    font-size: 1.8rem;
+  }
 }
 
 a {
@@ -49,6 +59,7 @@ button {
 button:active {
   transform: scale(0.98);
 }
+
 /* nav bar */
 
 .nav {
@@ -57,8 +68,12 @@ button:active {
   height: 100%;
   max-height: 10.4rem;
   padding: 2.4rem;
-  margin: auto;
   border-radius: 0 0 6rem 6rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
 }
 .nav--light {
   background-color: var(--color-white);
@@ -137,11 +152,33 @@ button:active {
   padding: 1rem 3.2rem;
   font-size: 1.8rem;
   border-radius: 0.8rem;
+  border: 0;
+  outline: transparent;
+  white-space: nowrap;
 }
 
 .btn--primary {
   background-color: var(--color-primary);
   color: var(--color-white);
+}
+.btn--secondary {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+}
+.btn--secondary > img {
+  margin-left: 0.5rem;
+}
+
+.btn--muted {
+  background-color: var(--color-bg-muted);
+}
+
+.btn.btn--equalizer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 3.2rem;
+  padding: 1rem 1.6rem;
 }
 
 .nav__toggle-button {
@@ -176,8 +213,8 @@ button:active {
 /* Sidebar container */
 
 .sidebar {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
   opacity: 0;
   max-width: 0;
   overflow: hidden;
@@ -195,11 +232,10 @@ button:active {
   opacity: 1;
   transition: 0.3s ease;
 }
-@media screen and (min-width:1024px) {
-   .sidebar{
+@media screen and (min-width: 1024px) {
+  .sidebar {
     display: none;
-   }
-    
+  }
 }
 /* Logo */
 
@@ -226,6 +262,382 @@ button:active {
   color: #ffffff;
 }
 
-.sidebar  .btn{
-    margin-top: 1.5rem;
+.sidebar .btn {
+  margin-top: 1.5rem;
+}
+
+/* hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 56.6rem;
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+}
+.hero__title {
+  font-size: 6rem;
+  font-weight: 600;
+  padding-top: 8rem;
+}
+
+.hero__subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 10.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 7rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__title {
+    font-size: 8rem;
+  }
+}
+
+/* section */
+.section-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .section-title {
+    font-size: 4.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-title {
+    font-size: 5.6rem;
+  }
+}
+
+/* latest-sound-effect section */
+.latest-sound-effect-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+  .latest-sound-effect-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.latest-sound-effect-header-right-section__title {
+  color: var(--color-text-muted);
+  margin-bottom: 1.8rem;
+}
+.latest-sound-effect-header-right-section__btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.8rem;
+}
+@media screen and (min-width: 1024px) {
+  .latest-sound-effect-header-right-section__btn-group {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+.latest-sound-effect {
+  background-color: var(--color-white);
+  width: 100%;
+  border-radius: 6rem 6rem 0 0;
+}
+
+.divider {
+  position: relative;
+}
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 5.2rem;
+  height: 100%;
+  width: 0.2rem;
+  background-color: #ffffff;
+}
+
+/* sound card */
+.audio-card {
+  background: var(--color-bg-disable);
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.audio-card__content {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .audio-card__content {
+    padding: 20px;
+  }
+}
+
+.audio-card__header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .audio-card__header {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.audio-card__logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .audio-card__logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.audio-card__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audio-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.audio-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .audio-card__title {
+    font-size: 18px;
+  }
+}
+
+.audio-card__subtitle {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .audio-card__subtitle {
+    font-size: 14px;
+  }
+}
+
+.audio-card__player {
+  background: var(--color-bg-muted);
+  border-radius: 50px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .audio-card__player {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+}
+
+.audio-card__play-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 1rem
+}
+
+@media (min-width: 768px) {
+  .audio-card__play-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.audio-card__play-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+
+.audio-card__waveform {
+  flex: 1;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 1.5px;
+  padding: 0 4px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .audio-card__waveform {
+    height: 40px;
+    gap: 2px;
+    padding: 0 8px;
+  }
+}
+
+.audio-card__wave-bar {
+  width: 2.5px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+@media (min-width: 768px) {
+  .audio-card__wave-bar {
+    width: 3px;
+  }
+}
+
+.audio-card__wave-bar--active {
+  opacity: 1;
+}
+
+.audio-card__time {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .audio-card__time {
+    font-size: 13px;
+  }
+}
+
+.audio-card__volume-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .audio-card__volume-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.audio-card__controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.1rem;
+}
+
+.audio-card__control-button {
+  background: var(--color-bg-muted);
+  border: none;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 52px;
+}
+
+@media (min-width: 768px) {
+  .audio-card__control-button {
+    padding: 16px;
+    min-height: 56px;
+  }
+}
+
+.audio-card__control-button:hover {
+  background: #d8dde3;
+}
+
+.audio-card__control-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .audio-card__control-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ---------------- */
+.section {
+  width: 100%;
+  height: 800px;
+  background-color: aqua;
 }
