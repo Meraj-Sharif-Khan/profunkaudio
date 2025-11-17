@@ -364,7 +364,6 @@ button:active {
   font-size: 3.6rem;
   font-weight: 700;
   color: var(--color-primary);
-  white-space: nowrap;
 }
 
 .section-subtitle {
@@ -389,6 +388,7 @@ button:active {
 .latest-sound-effect-header-right-section__btn-group {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.8rem;
 }
@@ -1027,7 +1027,7 @@ button:active {
   text-align: center;
   z-index: 3;
   width: 100%;
-  max-width: 59.2rem;
+  max-width: 70rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1038,7 +1038,6 @@ button:active {
   font-size: 2.8rem;
   color: #ffffff;
   letter-spacing: 0;
-  white-space: nowrap;
 }
 
 @media screen and (min-width: 768px) {
@@ -1154,12 +1153,16 @@ button:active {
 .footer-link {
   color: #ffffff;
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 3.2rem;
   width: 100%;
   max-width: 326px;
   justify-content: space-between;
+}
+
+.footer-link-container{
+  min-width: 130px;
 }
 
 .link-title {
@@ -1179,13 +1182,26 @@ button:active {
   max-width: 287px;
 }
 .mail {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .mail {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mail {
+    font-size: 4rem;
+  }
 }
 
 .contact-info {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .copyright-social {
