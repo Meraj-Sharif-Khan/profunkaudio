@@ -31,7 +31,7 @@ function removeNavActive() {
 // explore section
 
 document.getElementById("exploreBtn").addEventListener("click", () => {
-  document.getElementById("exploreSection").scrollIntoView({
+  document.getElementById("scrollToView").scrollIntoView({
     behavior: "smooth",
   });
 });
